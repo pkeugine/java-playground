@@ -41,6 +41,9 @@ jobs:
     runs-on: ubuntu-latest
     needs: ["run-github-actions"]
     steps:
+      # Checkout the repository to the GitHub Actions runner
+      - name: Checkout
+        uses: actions/checkout@v3
       - name: Run Local K6 Test
         uses: grafana/k6-action@v0.2.0
         with:
