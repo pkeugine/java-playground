@@ -37,3 +37,7 @@ jobs:
           who-to-greet: PK
       - name: Log Greeting Time
         run: echo "${{ steps.greet.outputs.time }}"
+      - name: Run Local K6 Test
+        uses: grafana/k6-action@v0.2.0
+        with:
+          filename: test.js
